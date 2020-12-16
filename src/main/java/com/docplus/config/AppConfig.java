@@ -1,5 +1,6 @@
 package com.docplus.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.auditing.DateTimeProvider;
@@ -13,24 +14,37 @@ import java.util.Optional;
 @EnableCouchbaseAuditing
 public class AppConfig extends AbstractCouchbaseConfiguration {
 
+
+    @Value("${couchbase.bootStrapServers}")
+    private String bootStrapServers;
+
+    @Value("${couchbase.username}")
+    private String username;
+
+    @Value("${couchbase.password}")
+    private String password;
+
+    @Value("${couchbase.bucketname}")
+    private String bucketname;
+
     @Override
     public String getConnectionString() {
-        return "couchbase://127.0.0.1";
+        return bootStrapServers;
     }
 
     @Override
     public String getUserName() {
-        return "docplus";
+        return username;
     }
 
     @Override
     public String getPassword() {
-        return "passw0rd";
+        return password;
     }
 
     @Override
     public String getBucketName() {
-        return "docplus";
+        return bucketname;
     }
 
     @Bean
