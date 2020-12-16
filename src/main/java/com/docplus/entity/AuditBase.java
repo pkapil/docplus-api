@@ -2,10 +2,7 @@ package com.docplus.entity;
 
 
 import lombok.Data;
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.annotation.*;
 
 import java.time.Instant;
 
@@ -23,5 +20,8 @@ public class AuditBase {
 
     @CreatedDate
     private Instant creationDate;
+
+    @Version
+    private Long version;
 
 }

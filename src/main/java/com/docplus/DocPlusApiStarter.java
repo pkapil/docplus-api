@@ -23,6 +23,7 @@ public class DocPlusApiStarter implements CommandLineRunner {
     public void run(String... args) throws Exception {
         PodamFactory factory = new PodamFactoryImpl();
         Patient myPojo = factory.manufacturePojo(Patient.class);
+        myPojo.setVersion(null);
         patientRepository.save(myPojo);
 
         for (Patient p : patientRepository.findAll()) {
