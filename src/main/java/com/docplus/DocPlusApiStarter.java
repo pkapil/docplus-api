@@ -27,19 +27,19 @@ public class DocPlusApiStarter implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        PodamFactory factory = new PodamFactoryImpl();
-        Patient patient = factory.manufacturePojo(Patient.class);
-        Hospital hospital = factory.manufacturePojo(Hospital.class);
-        patient.setVersion(null);
-        patientRepository.save(patient);
-        hospital.setVersion(null);
-        hospitalRepository.save(hospital);
-        for (Patient p : patientRepository.findAll()) {
-            System.out.println(p);
-        }
-        for (Hospital p : hospitalRepository.findAll()) {
-            System.out.println(p);
-        }
+//        PodamFactory factory = new PodamFactoryImpl();
+//        Patient patient = factory.manufacturePojo(Patient.class);
+//        Hospital hospital = factory.manufacturePojo(Hospital.class);
+//        patient.setVersion(null);
+//        patientRepository.save(patient);
+//        hospital.setVersion(null);
+//        hospitalRepository.save(hospital);
+//        for (Patient p : patientRepository.findAll()) {
+//            System.out.println(p);
+//        }
+//        for (Hospital p : hospitalRepository.findAll()) {
+//            System.out.println(p);
+//        }
 
     }
 }
