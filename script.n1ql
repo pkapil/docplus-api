@@ -1,2 +1,0 @@
-CREATE INDEX `patient_idx` ON `docplus` (`_class`) WHERE (`_class` = "com.docplus.entity.Patient")
-CREATE INDEX `hospital_idx` ON `docplus` (`_class`) WHERE (`_class` = "com.docplus.entity.Hospital")

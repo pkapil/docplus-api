@@ -4,7 +4,7 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -37,11 +37,16 @@ public class Patient extends AuditBase {
     private String secondName;
 
     @NotNull
+    @Positive
+    @Min(value = 0L)
+    @Max(value = 120L)
     private int age;
+
+    @Email
+    private String email;
 
     @NotNull
     private SexType sex;
-
 
     private String nextKin;
 
@@ -67,9 +72,9 @@ public class Patient extends AuditBase {
     private ContactInfo patientNextKinContactInfo;
 
     private String taxCode;
-
+    @NotEmpty
     private String maritalStatus;
-
+    @NotEmpty
     private String profession;
 
     @NotNull
