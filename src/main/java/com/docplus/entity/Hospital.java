@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @Document
 @ToString
+@EqualsAndHashCode(callSuper = false)
 public class Hospital extends AuditBase {
     @Id
     private String id;

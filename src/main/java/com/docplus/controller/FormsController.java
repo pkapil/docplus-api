@@ -8,6 +8,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsonschema.JsonSchema;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.imifou.jsonschema.module.addon.AddonModule;
 import com.github.victools.jsonschema.generator.*;
@@ -53,7 +54,7 @@ public class FormsController {
                if(val instanceof JsonPropertyOrder)
                {
                   values=  ((JsonPropertyOrder) val).value();
-                   ((ObjectNode) jsonSchema).put("ui:order", new ObjectMapper().writeValueAsString(values));
+                   ((ObjectNode) jsonSchema).putArray("ui:order").addAll((ArrayNode) new ObjectMapper().valueToTree(values) );
                }
             }
         }
