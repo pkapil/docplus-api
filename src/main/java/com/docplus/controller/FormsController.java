@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsonschema.JsonSchema;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.imifou.jsonschema.module.addon.AddonModule;
 import com.github.victools.jsonschema.generator.*;
@@ -40,5 +41,4 @@ public class FormsController {
     public ResponseEntity<?> getHospitalForm() throws IOException {
         return ResponseEntity.ok(schemaService.getSchemaFromClass(Hospital.class));
     }
-
 }
