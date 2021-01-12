@@ -7,6 +7,7 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 @Data
@@ -59,13 +60,14 @@ public class Hospital extends AuditBase {
     private String telephone;
 
     @NotNull
-    @JsonSchema(title = "Fax", description = "Please enter the hospital fax number", required = true)
+    @JsonSchema(title = "Fax", description = "Please enter the hospital fax number",defaultValue = "")
     @JsonPropertyDescription("Fax")
     private String fax;
 
     @NotNull
-    @JsonSchema(title = "Email", description = "Please enter the hospital email", required = true)
+    @JsonSchema(title = "Email", description = "Please enter the hospital email", required = true,pattern="^(.+)@(.+)$")
     @JsonPropertyDescription("Email")
+    @Email
     private String email;
 
     @NotNull
