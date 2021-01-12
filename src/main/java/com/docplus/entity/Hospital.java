@@ -23,7 +23,6 @@ import javax.validation.constraints.NotNull;
         "city",
         "telephone",
         "fax",
-        "email",
         "age",
         "email",
         "currencyCod"
