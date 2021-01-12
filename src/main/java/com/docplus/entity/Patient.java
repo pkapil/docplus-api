@@ -33,13 +33,15 @@ import java.util.List;
         "maritalStatus",
         "profession",
         "nextKin",
+        "patientNextKinContactInfo",
         "motherName",
         "motherExistence",
         "fatherName",
         "fatherExistence",
         "parentTogether",
         "hasInsurance",
-        "taxCode"
+        "taxCode",
+        "patientProfilePhoto"
 })
 public class Patient extends AuditBase {
 
