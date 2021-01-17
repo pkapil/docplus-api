@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Log4j2
-public class HelloController {
+public class ApiController {
 
     @GetMapping("/")
     public ResponseEntity<?> getHello() {

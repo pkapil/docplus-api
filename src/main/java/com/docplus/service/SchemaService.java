@@ -32,7 +32,6 @@ public class SchemaService {
         if (annotatedTypes.length > 0) {
             for (Annotation val : annotatedTypes) {
                 if (val instanceof JsonPropertyOrder) {
-
                     ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(((JsonPropertyOrder) val).value()));
                     arrayList.add("*");
                     ((ObjectNode) jsonSchema).putArray("ui:order").addAll((ArrayNode)new ObjectMapper().valueToTree(
