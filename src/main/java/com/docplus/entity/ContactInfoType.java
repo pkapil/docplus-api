@@ -6,5 +6,5 @@ public enum ContactInfoType {
     PARENT,
     RELATIVE,
     FRIEND,
-    OTHER;
+    OTHER
 }

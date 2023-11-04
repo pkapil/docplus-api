@@ -26,17 +26,15 @@ public class SchemaService {
                 .with(module).with(module1);
         SchemaGeneratorConfig config = configBuilder.build();
         SchemaGenerator generator = new SchemaGenerator(config);
-        JsonNode jsonSchema = generator.generateSchema(clazz);
+        ObjectNode jsonSchema = generator.generateSchema(clazz);
         String[] values = new String[]{};
         Annotation[] annotatedTypes = clazz.getAnnotations();
-        if (annotatedTypes.length > 0) {
-            for (Annotation val : annotatedTypes) {
-                if (val instanceof JsonPropertyOrder) {
-                    ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(((JsonPropertyOrder) val).value()));
-                    arrayList.add("*");
-                    ((ObjectNode) jsonSchema).putArray("ui:order").addAll((ArrayNode) new ObjectMapper().valueToTree(
-                            arrayList));
-                }
+        for (Annotation val : annotatedTypes) {
+            if (val instanceof JsonPropertyOrder) {
+                ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(((JsonPropertyOrder) val).value()));
+                arrayList.add("*");
+                jsonSchema.putArray("ui:order").add(new ObjectMapper().valueToTree(
+                        arrayList));
             }
         }
         return jsonSchema.toString();
