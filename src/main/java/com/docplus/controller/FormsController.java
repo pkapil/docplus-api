@@ -19,17 +19,17 @@ public class FormsController {
     @Autowired
     SchemaService schemaService;
 
-    @GetMapping("/forms/patient")
+    @GetMapping(value = "/forms/patient", produces = "application/json")
     public ResponseEntity<?> getPatientForm() throws IOException {
         return ResponseEntity.ok(schemaService.getSchemaFromClass(Patient.class));
     }
 
-    @GetMapping("/forms/hospital")
+    @GetMapping(value = "/forms/hospital", produces = "application/json")
     public ResponseEntity<?> getHospitalForm() throws IOException {
         return ResponseEntity.ok(schemaService.getSchemaFromClass(Hospital.class));
     }
 
-    @GetMapping("/forms/vitalinfo")
+    @GetMapping(value = "/forms/vitalinfo", produces = "application/json")
     public ResponseEntity<?> getVitalInfoForm() throws IOException {
         return ResponseEntity.ok(schemaService.getSchemaFromClass(VitalInfo.class));
     }

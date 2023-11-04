@@ -3,14 +3,11 @@ package com.docplus.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.github.imifou.jsonschema.module.addon.TypeFormat;
 import com.github.imifou.jsonschema.module.addon.annotation.JsonSchema;
 import lombok.*;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
@@ -24,7 +21,7 @@ import java.util.List;
 @Document
 @ToString
 @EqualsAndHashCode(callSuper = false)
-@JsonPropertyOrder({"id","firstName",
+@JsonPropertyOrder({"id", "firstName",
         "lastName",
         "middleName",
         "dateOfBirth",

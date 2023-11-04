@@ -39,7 +39,7 @@ public class VitalInfo {
     private String id;
 
     @NotNull
-    @JsonSchema(title = "Examination Date", description = "Please enter the examination date & Time", required = true,format= TypeFormat.DATE_TIME)
+    @JsonSchema(title = "Examination Date", description = "Please enter the examination date & Time", required = true, format = TypeFormat.DATE_TIME)
     @JsonPropertyDescription("First Name")
     private LocalDate examinationDate;
 

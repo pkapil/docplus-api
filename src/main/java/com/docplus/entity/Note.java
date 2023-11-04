@@ -1,13 +1,9 @@
 package com.docplus.entity;
 
-import com.github.imifou.jsonschema.module.addon.TypeFormat;
 import com.github.imifou.jsonschema.module.addon.annotation.JsonSchema;
 import lombok.*;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotNull;
-import java.time.Instant;
-import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor

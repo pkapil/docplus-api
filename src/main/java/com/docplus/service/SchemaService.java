@@ -34,7 +34,7 @@ public class SchemaService {
                 if (val instanceof JsonPropertyOrder) {
                     ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(((JsonPropertyOrder) val).value()));
                     arrayList.add("*");
-                    ((ObjectNode) jsonSchema).putArray("ui:order").addAll((ArrayNode)new ObjectMapper().valueToTree(
+                    ((ObjectNode) jsonSchema).putArray("ui:order").addAll((ArrayNode) new ObjectMapper().valueToTree(
                             arrayList));
                 }
             }

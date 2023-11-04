@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PatientProfilePhoto {
-    @JsonSchema(title="Photo",description = "Provide photo as upload")
+    @JsonSchema(title = "Photo", description = "Provide photo as upload")
     private String photo;
 
 }

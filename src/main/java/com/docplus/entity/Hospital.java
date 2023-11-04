@@ -30,7 +30,7 @@ import javax.validation.constraints.NotNull;
 public class Hospital extends AuditBase {
     @Id
     @NotNull
-    @JsonSchema(ignore=true)
+    @JsonSchema(ignore = true)
     private String id;
 
     @NotNull
@@ -59,12 +59,12 @@ public class Hospital extends AuditBase {
     private String telephone;
 
     @NotNull
-    @JsonSchema(title = "Fax", description = "Please enter the hospital fax number",defaultValue = "")
+    @JsonSchema(title = "Fax", description = "Please enter the hospital fax number", defaultValue = "")
     @JsonPropertyDescription("Fax")
     private String fax;
 
     @NotNull
-    @JsonSchema(title = "Email", description = "Please enter the hospital email", required = true,pattern="^(.+)@(.+)$")
+    @JsonSchema(title = "Email", description = "Please enter the hospital email", required = true, pattern = "^(.+)@(.+)$")
     @JsonPropertyDescription("Email")
     @Email
     private String email;
